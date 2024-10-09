@@ -1,0 +1,22 @@
+CREATE TABLE `users` (
+	`user_id` serial AUTO_INCREMENT NOT NULL,
+	`first_name` varchar(255) NOT NULL,
+	`last_name` varchar(255) NOT NULL,
+	`full_name` varchar(255) NOT NULL,
+	`email` varchar(255) NOT NULL,
+	`phone_number` varchar(20) NOT NULL,
+	`job_title` varchar(255),
+	`department` varchar(255),
+	`company` varchar(255),
+	`role` varchar(100) NOT NULL,
+	`status` varchar(50) DEFAULT 'active',
+	`created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+	`deleted_at` datetime,
+	`last_login` datetime,
+	`time_zone` varchar(50) NOT NULL,
+	`language_pref` varchar(50) NOT NULL DEFAULT 'en',
+	`last_password_change` datetime,
+	`device_info` varchar(255),
+	CONSTRAINT `users_user_id` PRIMARY KEY(`user_id`),
+	CONSTRAINT `users_email_unique` UNIQUE(`email`)
+);
